@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+            padding: 15px;
+        }
+        input{
+            margin: 15px;
+            width: 30%;
+            padding: 5px;
+        }
+        button{
+     margin: 10px;
+    padding: 8px;
+    width: 10%;
+    height: 10%;
+    cursor: pointer;
+    background-color: #00176c;
+    color: white;
+    border-radius: -10%;
+    box-shadow: 1px 1px 11px 1px #537387;
+}
+        button:hover{
+            background-color: whitesmoke;
+    color: #00176c;
+    border: 2px solid black;
+    border-radius: 23%;
+}
+        
+
+    </style>
+</head>
+<body>
+    <div id="main">
+    <h1>Mini Calculator</h1>
+    <input placeholder="Enter a Number To Calculate" type="number" id="num2" />
+    <input placeholder="Enter a Number To Calculate" type="number" id="num1" />
+    
+    <button onclick="add()"  >Add</button>
+    <button onclick="sub()"  >Subtract</button>
+    <button onclick="mult()" >Multiply</button>
+    <button onclick="mod()"  >Modulus</button>
+    <button onclick="div()"  >Divide</button>
+<div id="show-result">
+
+</div>
+
+</div>
+
+
+    <script>
+        var num1 = document.getElementById('num1')
+        var num2 = document.getElementById('num2')
+        var dom = document.getElementById('show-result')
+        function add(){
+            var addition = Number(num1.value) + Number(num2.value)
+            console.log(addition)
+           var heading = document.createElement("h1")
+           heading.innerHTML="Addition Of Two Number Is " + addition;
+           dom.appendChild(heading)
+        }
+        function sub(){
+            var subtract = Number(num1.value) - Number(num2.value)
+            console.log(subtract)
+           var heading = document.createElement("h1")
+           heading.innerHTML="Subtraction Of Two Number Is " + subtract;
+           dom.appendChild(heading)
+        }
+        function mult(){
+            var multiply = Number(num1.value) * Number(num2.value)
+            console.log(multiply)
+           var heading = document.createElement("h1")
+           heading.innerHTML="Multiplication Of Two Number Is " + multiply;
+           dom.appendChild(heading)
+        }
+        function div(){
+            var divide = Number(num1.value) / Number(num2.value)
+            console.log(divide)
+           var heading = document.createElement("h1")
+           heading.innerHTML="Division Of Two Number Is " + divide;
+           dom.appendChild(heading)
+        }
+        function mod(){
+            var modulus = Number(num1.value) % Number(num2.value)
+            console.log(modulus)
+           var heading = document.createElement("h1")
+           heading.innerHTML="Mode Of Two Number Is " + modulus;
+           dom.appendChild(heading)
+        }
+    </script>
+</body>
+</html>

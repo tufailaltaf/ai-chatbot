@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+        }
+        button{
+            width: 100px;
+    background-color: black;
+    color: aqua;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+        }
+        button:hover{
+            background-color: aqua;
+    color: black;
+        }
+        input{
+            width: 50%;
+    /* height: 39%; */
+    margin: 2px;
+    padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <h1>Find Grade</h1>
+        <input placeholder="Enter Your per here" type="number" id="per" />
+        <button onclick="gd()">Find</button>
+        <div id="show-result"></div>
+    </div>
+
+
+    <script>
+        var per = document.getElementById('per')
+        var result =document.getElementById('show-result');
+        function gd(){
+            console.log(per.value)
+            if(per.value >=80 && per.value <=95){
+                var percentage = Number(per.value)
+                var heading = document.createElement('h1')
+                heading.innerHTML = "A1 is your grade " + percentage + "%";
+                console.log(heading)
+                result.appendChild(heading)
+                
+            }
+            else if(per.value >=70 && per.value <=79){
+                var percentage = Number(per.value)
+                var heading = document.createElement("h1")
+                heading.innerHTML = "A is your grade " +percentage + "%";
+                result.appendChild(heading)
+            }
+            else if(per.value >=60 && per.value <=69){
+                var percentage = Number(per.value)
+                var heading = document.createElement("h1")
+                heading.innerHTML = "B is your grade " +percentage + "%";
+                result.appendChild(heading)
+            }
+            else{
+            }
+            }
+        
+
+    </script>
+</body>
+</html>
